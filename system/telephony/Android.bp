@@ -664,6 +664,7 @@ cc_prebuilt_library_shared {
                 "lib-imsvtutils",
                 "libandroid",
                 "libhidlbase",
+                "libion",
                 "vendor.qti.imsrtpservice@3.0",
                 "vendor.qti.imsrtpservice@3.1",
                 "libbinder",
@@ -6782,6 +6783,7 @@ cc_prebuilt_binary {
 cc_prebuilt_binary {
     name: "imsvtdaemon",
     owner: "qcom",
+    allow_undefined_symbols: true,
     target: {
         android_arm64: {
             srcs: [
