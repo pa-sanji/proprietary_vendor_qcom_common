@@ -2,11 +2,14 @@
 # Automatically generated file. DO NOT MODIFY
 #
 
+# Alioth: loc_sys_service is an AIDL client for vendor.qti.gnss.ILocAidlGnss,
+# which the legacy HIDL GNSS stack used by this device does not provide. It was
+# removed manually so it cannot retry the missing service every second.
+
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/common/system/gps
 
 PRODUCT_COPY_FILES += \
-    vendor/qcom/common/system/gps/proprietary/system_ext/etc/init/loc_sys_service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/loc_sys_service.rc \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/init/vendor.qti.qccsyshal_aidl-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/vendor.qti.qccsyshal_aidl-service.rc \
     vendor/qcom/common/system/gps/proprietary/system_ext/etc/permissions/com.qti.location.sdk.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.location.sdk.xml \
@@ -35,6 +38,5 @@ PRODUCT_PACKAGES += \
     com.qualcomm.location \
     com.qti.location.sdk \
     vendor.qti.qccsyshal_aidl-service.xml \
-    loc_sys_service \
     qccsyshal@1.2-service \
     qccsyshal_aidl-service
