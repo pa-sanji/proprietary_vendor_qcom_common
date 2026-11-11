@@ -14,15 +14,19 @@ service wfdservice64 /system_ext/bin/wfdservice64
     user system
     disabled
     oneshot
+    # The A17 kona reference trees install the 64-bit binary under the
+    # vendor.wfdservice path. Keep the binary and its module where they are,
+    # but start the 64-bit service from both properties.
+    interface aidl wfdservice
 
 on property:vendor.wfdservice=enable
-    start wfdservice
+    start wfdservice64
 
 on property:vendor.wfdservice64=enable
     start wfdservice64
 
 on property:vendor.wfdservice=disable
-    stop wfdservice
+    stop wfdservice64
 
 on property:vendor.wfdservice64=disable
     stop wfdservice64
