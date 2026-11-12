@@ -45,4 +45,12 @@ else
 	done
 fi
 
+# alioth: the userspace HVDCPD/PPS module fights USB-PD and keeps the
+# charger in QC3. The kernel cp_qc30 driver still handles QC2/3, so keep
+# the userspace daemon disabled like the sm8250-common reference tree.
+if [ "$(getprop ro.product.device)" = "alioth" ]; then
+    setprop persist.vendor.hvdcp_opti.start 2
+    exit 0
+fi
+
 setprop persist.vendor.hvdcp_opti.start 1
